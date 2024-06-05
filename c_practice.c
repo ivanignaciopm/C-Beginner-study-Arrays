@@ -1,32 +1,34 @@
 #include<stdio.h>
 
 int main() {
-  int matrix[][4] = {{14, 10, 6, 4}, {3, 7, 18, 11}, {13, 9, 5, 17}, {19, 12, 2, 1}}; 
+  // Definimos una matriz de 4x4 enteros
+  int matrix[4][4] = {{14, 10, 6, 4}, {3, 7, 18, 11}, {13, 9, 5, 17}, {19, 12, 2, 1}}; 
   int sum = 0;
 
-  // Checkpoint 1 code goes here.
-  int num = matrix[3][1];
+
+  // Obtener el tamaño total de la matriz en bytes
   int rowslength = sizeof(matrix);
+  // Obtener el tamaño de una fila de la matriz en bytes
   int columnslength = sizeof(matrix[0]);
-  printf("%d\n\nTask2:\n", num);
-  printf("%d\n", rowslength);
-  printf("%d\n", columnslength);
 
-  // check size
-  int rowDimension = sizeof(matrix)/sizeof(matrix[0]);
-  int columnDimension = sizeof(matrix[0])/sizeof(int);
-  printf("%d\n\nTask3:\n", num);
-  printf("%d\n", rowDimension);
-  printf("%d\n", columnDimension);
-  
-  /* 
-  Checkpoint 2 code goes here.
-   int sum;
-  for (i = 0; sizeof[], i++) {
-    for (f = 0: size; i++) {
+  printf("Task1:\n");
+  // Imprimir el tamaño total de la matriz (en bytes)
+  printf("%d\n", rowslength);  // Debería imprimir 64 bytes
+  // Imprimir el tamaño de una fila de la matriz (en bytes)
+  printf("%d\n", columnslength);  // Debería imprimir 16 bytes
 
-    }
-  }
-} */
-return 0;
+  // Calcular el número de filas de la matriz
+  // Dividimos el tamaño total de la matriz por el tamaño de una fila
+  int rowDimension = sizeof(matrix) / sizeof(matrix[0]);
+  // Calcular el número de columnas de la matriz
+  // Dividimos el tamaño de una fila por el tamaño de un entero
+  int columnDimension = sizeof(matrix[0]) / sizeof(int);
+
+  printf("\nTask2:\n");
+  // Imprimir el número de filas
+  printf("%d\n", rowDimension);  // Debería imprimir 4
+  // Imprimir el número de columnas
+  printf("%d\n", columnDimension);  // Debería imprimir 4
+
+  return 0;
 }
